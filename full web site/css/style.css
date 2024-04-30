@@ -1,0 +1,920 @@
+
+
+/* base rule*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    /* 1rem = 10px*/
+}
+
+:root{
+    --main-color: rgb(5, 76, 227);
+    --para-color: rgb(48, 49, 50);
+    --heading-color: black;
+    --heading-size:3rem;
+    --para-size:2rem;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-size: var(--heading-size);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p,a,li{
+    font-size: var(--para-size);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--para-color);
+}
+a{
+    text-decoration: none;
+}
+
+
+/* themes*/
+
+
+
+
+/* layout*/
+
+
+.container{
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem 2rem ;
+    width: 100vw;
+}
+
+/* module / reusable*/
+
+.btn{
+    width: 15rem;
+    height: 4rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 0.7rem;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.btn:hover{
+    background-color: blue;
+}
+
+
+
+/* state */
+ /* =================== NAVBAR SECTION START ================================== */
+ .section-navbar{
+    width: 100%;
+    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+ }
+.section-navbar .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo a img{
+    width: 15rem;
+    height: 9rem;
+    position: relative;
+    left: 10rem;
+    margin-top: -25px;
+    margin-bottom: -15px;
+}
+
+#navbar ul{
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    text-transform: capitalize;
+    position: relative;
+    right: 15rem;
+    
+}
+
+#navbar ul a li{
+    font-size: var(--heading-size);
+    list-style: none;
+    color: var(--heading-color);
+    
+    position: relative;
+   
+}
+
+
+#navbar ul a li:hover{
+    color: var(--main-color);
+}
+
+
+.nav-items:hover::after{
+    content: "";
+    color: var(--main-color);
+   border-bottom: 0.34rem solid var(--main-color);
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 0%;
+   animation: nav-loader 0.6s linear;
+}
+
+@keyframes nav-loader{
+    0%{
+      width: 0%;  
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+/* =================== NAVBAR SECTION END ================================== */
+
+
+/* =================== BANNER SECTION START ================================*/
+
+
+ .section-banner{
+    
+    background-image: linear-gradient(to right top, #21b2ee, #009ef5, #0088f8, #006ff6, #1251eb);
+ }
+
+ .section-banner .container{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ #banner-image img{
+  
+    width: 60rem;
+    height: 62rem;
+    transform: scalex(-1);
+ }
+
+
+ .banner-subheading{
+    color: var(--main-color);
+    letter-spacing: 0.2rem;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+ }
+
+ .banner-mainheading{
+    color: var(--main-color);
+    font-weight: bolder;
+    font-size: 6rem;
+    margin-bottom: 1rem;
+ }
+ .banner-para{
+  color: white;
+    line-height: 2.5rem;
+    margin-bottom: 2.5rem;
+ }
+
+ #banner-text{
+    margin-left: 2rem;
+ }
+
+
+
+
+/* =================== BANNER SECTION END ================================*/
+
+
+
+
+/* ================== ABOUT SECTION START ============================ */
+  
+  #about-first{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: start;
+  }
+  #common-heading-para{
+    margin-left: 5rem;
+  }
+
+  #about-second{
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    padding: 5rem;
+  }
+  
+  .about-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32rem;
+
+  }
+
+  #about-second .about-items div img{
+   margin-bottom: 0.1rem;
+    color: var(--main-color);
+    background-color: rgb(238, 233, 233);
+    border-radius: 50%;
+    
+    width: 8rem;
+    aspect-ratio: 1;
+    
+  }
+  #about-second .about-items div{
+    height: 12rem;
+    width: 12rem;
+    background-color: rgb(238, 233, 233);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #about-second .about-items div:hover{
+    background-color: var(--main-color);
+    animation: icon-rotate 0.3s linear reverse;
+  }
+
+  #about-second .about-items div img:hover{
+    background-color: var(--main-color);
+    color: blue;
+    
+   animation: icon-rotate 0.3s linear reverse;
+  }
+
+  @keyframes icon-rotate{
+    
+    100%{
+        transform: rotate(360deg);
+    }
+  }
+
+  .about-items h3{
+    margin-bottom: 1.5rem;
+  }
+
+
+
+/* ================== ABOUT SECTION END ============================ */
+
+
+
+/* ================= COURSE SECTION START ==========================*/
+
+.section-course-cart .container{
+  display: flex;
+  
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding-left: 10rem;
+}
+
+.cart{
+  height: 25rem;
+  width: 30rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  
+}
+
+.cart:hover{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.cart i{
+  font-size: 7rem;
+  margin-bottom: 1rem;
+  
+}
+.cart h3{
+  margin-bottom: 2rem;
+}
+
+.cart p{
+  text-align: center;
+}
+
+/* ================= COURSE SECTION END ==========================*/
+
+
+
+
+
+/* ================= CHOOSE SECTION START ======================*/
+
+ .section-choose-text{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+ }
+
+
+
+  
+
+                        /* left part*/
+
+.section-choose{
+  display: flex;
+  justify-content: center;
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.choose-item{
+  margin-bottom: 4rem;
+}
+
+
+
+.choose-item div{
+  background-color: #a7dcf9;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: var(--main-color);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.choose-item h3{
+  margin-bottom: 1rem;
+}
+
+.choose-item p{
+  color: var(--para-color);
+}
+
+.leftpart .choose-item{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: end;
+}
+
+
+                    /* centre image*/
+  .choose-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }                  
+
+  .choose-image img{
+    height: 50rem;
+    width: 53rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }             
+
+
+
+/* ================= CHOOSE SECTION END ======================*/
+
+
+
+
+/* ================= CONTACT HOME SECTION START ===============*/
+
+.contact-home{
+  display: flex;
+  justify-content: center;
+}
+
+.contact-home .container{
+
+  margin-bottom: 3rem;
+ 
+  height: 30rem;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  position: relative;
+  bottom: -15rem;
+  background-color: white;
+  z-index: 1;
+}
+
+#contact-home--text h3{
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+#contact-home--text p{
+  color: var(--para-color);
+  margin-bottom: 2rem;
+}
+
+#contact-home--btn a{
+  color: white;
+}
+
+#contact-home--btn a i{
+  color: var(--main-color);
+  background-color: white;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+}
+
+
+#contact-home--image img{
+  height: 29rem;
+  width: 40rem;
+  
+}
+
+
+
+/* ================= CONTACT HOME SECTION END ===============*/
+
+
+
+/* =============== FOOTER SECTION START =======================*/
+
+
+footer .container{
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  padding-top: 15rem;
+  padding-bottom: 3rem;
+}
+
+#footer-text p{ 
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+
+}
+
+#footer-text div{
+  display: flex;
+  gap: 3rem;
+}
+
+#footer-text div i{
+  height: 5rem;
+  width: 5rem;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer-text div i:hover{
+  color: white;
+  background-color: var(--main-color);
+  animation: footer-icon 0.3s linear reverse;
+}
+
+@keyframes footer-icon{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+
+#footer-course ul li{
+  list-style: none;
+  
+}
+
+#footer-course ul li a{
+  
+  color: white;
+}
+
+#footer-link ul li{
+  list-style: none;
+  
+}
+
+#footer-link ul li a{
+  
+  color: white;
+}
+
+
+
+
+
+/* =============== FOOTER SECTION END =======================*/
+
+
+
+/* ================= BLOG SECTION START ======================*/
+
+  #blog-content .container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 7rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin-top: 7rem;
+  }
+
+  .blog-cart{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .blog-cart img{
+    width: 100%;
+    height: 55%;
+  }
+
+  .blog-cart div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 0.7rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .blog-cart h3{
+    margin: 0rem 1rem 2rem 1.5rem;
+  }
+
+  .blog-cart div p i{
+    color: var(--main-color);
+    font-size: 2.5rem;
+    }
+
+  .blog-cart:hover{
+    transition: 0.3s linear;
+    transform: scale(1.2);
+  }
+
+  
+
+/* ================= BLOG SECTION START ======================*/
+
+
+
+/* ================ CONTACT US START ====================*/
+
+#contactUs-content{
+  overflow-x: hidden;
+  width: 100vw;
+ }
+ 
+  #contactUs-content .container{
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    
+    gap: 5rem;
+    margin: 3rem;
+  }
+
+  label{
+    display: block;
+  }
+
+  input{
+    font-size: 3rem;
+    border: 0.3rem var(--main-color) solid;
+    
+    background-color: var(--main-color);
+    color:white;
+    width: 100%;
+  }
+
+  ::placeholder{
+    font-size: 2rem ;
+    font-style: italic;
+    color: #21b2ee;
+    background-color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    
+  }
+
+  #form-name-gmail{
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  textarea{
+    border: 0.3rem var(--main-color) solid;
+    width: 70ch; /* Adjust the value as per your requirement */
+    color: var(--para-color);
+    margin-bottom: 2rem;
+  }
+
+ #map{
+  margin-right: 6rem;
+  height: 80%;
+  width: 50rem;
+  overflow: hidden;
+ }
+
+ form{
+  width: 60rem;
+ }
+
+
+
+ input:focus-visible,textarea:focus-visible{
+  outline: 0.3rem red solid;
+ }
+
+ .contactUs-content{
+    width: 100vw;
+ }
+
+  iframe{
+  width: 50rem;
+  height: 50rem;
+}
+
+
+
+
+/* ================ CONTACT US END ====================*/
+
+
+
+/* ================ SCROL BAR SECTION START =====================*/
+
+
+::-webkit-scrollbar{
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-track{
+  background-color:white;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--main-color);
+  border-radius: 50px;
+}
+
+
+
+
+/* ================ SCROL BAR SECTION END =====================*/
+
+
+
+/* ==================== RESPONSIVE SECTION  START ================*/
+
+
+
+ 
+
+ @media (width <= 1050px) {
+  html{
+    font-size: 50%;
+    /* 1rem = 8px*/
+  }
+
+  #logo a img{
+     height: 6rem;
+  }
+
+  /* contact us*/
+
+  #contactUs-content .container{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+ } 
+
+ @media (width <= 900px){
+  .section-navbar .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  #navbar{
+  padding-left: 30%;
+    
+  }
+
+  
+ .section-choose{
+  display: flex;
+  flex-direction: column;
+ }
+
+ .section-choose .choose-image{
+  order: -1;
+ }
+
+ .section-choose .choose-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  text-align: start;
+ }
+ 
+
+ }
+
+
+
+@media (width <= 800px){
+  html{
+    font-size: 37.5%;
+    /* 1rem =6px*/
+  }
+
+  .section-navbar .container{
+    gap: 1rem;
+  }
+
+  #logo a img{
+    padding-top: 3rem;
+    
+    width: 20rem;
+    height: 14rem;
+  }
+
+  textarea{
+    width: 50ch;
+  }
+
+  map iframe{
+    width: 20rem;
+    height: 50rem;
+  }
+  
+}
+
+@media (width <= 600px){
+  html{
+    font-size: 25%;
+  }
+
+  textarea{
+    width: 30ch;
+  }
+  
+}
+
+@media (width <= 400px){
+
+  html{
+    font-size: 37.5%;
+  }
+
+ 
+
+ 
+
+  #navbar ul a li{
+    font-size: 2.3rem;
+  }
+
+  
+
+  #navbar ul{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    padding-left: 45%;
+   
+  }
+
+
+  #banner-image img{
+    width: 30rem;
+    height: 40rem;
+  }
+  
+  #banner-text p{
+    font-size: 2rem;
+  }
+
+  #banner-text h3{
+    font-size: 3rem;
+  }
+ .section-banner .container{
+  display: flex;
+  flex-direction: column;
+ }
+
+ #banner-image{
+  order: -1;
+ }
+
+  #about-second{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .choose-image img{
+    height: 40rem;
+    width: 40rem;
+  }
+
+  
+  .contact-home .container{
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact-home--image img{
+    width: 30rem;
+    height: 30rem;
+  }
+
+
+  footer .container{
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+
+   /* blog*/
+
+   #blog-content .container{
+    display: flex;
+    flex-direction: column;
+   }
+
+
+   /* contact us */
+   
+   #form-name-gmail{
+    display: flex;
+    flex-direction: column;
+    
+
+   }
+
+   input{
+    width: 60vw;
+   }
+
+   .contactUs-content .container{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: start;
+   }
+
+   form,#map{
+    
+    width: 40rem;
+   }
+
+  
+   iframe{
+    width: 30rem;
+    height: 30rem;
+   }
+
+}
+
+
+
+@media (width <= 319px){
+  
+  header,.section-banner,footer{
+    overflow-x: hidden;
+  }
+}
+
+
+/* ==================== RESPONSIVE SECTION  END ================*/
